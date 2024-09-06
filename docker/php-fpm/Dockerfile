@@ -9,7 +9,7 @@ RUN apk --update --no-cache add  \
     pecl install -f xdebug && \
     docker-php-ext-install pdo_mysql  && \
     docker-php-ext-enable xdebug  && \
-    #FIXME: 777 shoudln't be required, only xdebug needs to write to xdebug.log
+    #FIXME: 777 shouldn't be required, only xdebug needs to write to xdebug.log
     touch /tmp/xdebug.log && chmod 777 /tmp/
 
 COPY --from=composer /usr/bin/composer /usr/bin/composer
