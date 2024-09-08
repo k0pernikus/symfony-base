@@ -2,18 +2,17 @@
 
 namespace App\Controller;
 
+use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
 use Symfony\Component\HttpFoundation\JsonResponse;
 use Symfony\Component\HttpFoundation\Response;
 use Symfony\Component\Routing\Attribute\Route;
 
-class HelloWorldController
+class HelloWorldController extends AbstractController
 {
     #[Route('/')]
     public function sayHelloWorld(): Response
     {
-        return new Response(
-            '<html><body>HELLO WORLD</html>'
-        );
+        return $this->render('hello_world.html.twig');
     }
 
     #[Route('/status')]
