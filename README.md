@@ -19,11 +19,11 @@
 ## Composer install // symfony console 
 
 - Connect to php container, e.g.:
-  - `docker exec -it docker-php-fpm-1 ash`
+  - `docker exec -it docker-php-fpm-1 ash -l`
 - Composer:
-  - `/usr/bin composer install`
+  - `composer install`
 - Symfony Console:
-  -  php ./bin/console
+  -  console
 
 ## Web App
 

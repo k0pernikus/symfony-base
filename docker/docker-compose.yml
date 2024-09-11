@@ -13,8 +13,10 @@ services:
             - "33060:3306"
 
     php-fpm:
-        build:
-            context: ./php-fpm
+        #build:
+        #    context: ./php-fpm
+        image: k0pernikus/php-dev-base
+        hostname: php
         depends_on:
             - database
         environment:
@@ -24,7 +26,8 @@ services:
         volumes:
             - ../app:/var/www:cached
             - ./php-fpm/xdebug.ini:/usr/local/etc/php/conf.d/docker-php-ext-xdebug.ini:delegated
-            
+            - ./php-fpm/path.sh:/etc/profile.d/path.sh
+
     nginx:
         build:
             context: ./nginx

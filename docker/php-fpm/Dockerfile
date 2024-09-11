@@ -27,5 +27,5 @@ RUN apk --no-cache add \
 COPY --from=composer /usr/bin/composer /usr/bin/composer
 
 WORKDIR /var/www
-CMD php-fpm
+CMD ["php-fpm"]
 EXPOSE 9000

@@ -1,0 +1,1 @@
+export PATH=/var/www/bin:$PATH
